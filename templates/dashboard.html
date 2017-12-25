@@ -4,28 +4,32 @@
 
 <!-- nav bar stuff -->
 <nav class="nav nav-tabs" id="myTab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
-        Home
+    <a class="nav-item nav-link active" id="nav-basics-tab" data-toggle="tab" href="#nav-basics" role="tab" aria-controls="nav-basics" aria-selected="true">
+        Basics
     </a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
-        Profile
+    <a class="nav-item nav-link" id="nav-web-dev-tab" data-toggle="tab" href="#nav-web-dev" role="tab" aria-controls="nav-web-dev" aria-selected="false">
+        Web Dev
     </a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
-        Contact
+    <a class="nav-item nav-link" id="nav-analytics-tab" data-toggle="tab" href="#nav-analytics" role="tab" aria-controls="nav-analytics" aria-selected="false">
+        Analytics
     </a>
 </nav>
 
 <!-- tab content -->
 <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        This is Home content 
+    <div class="tab-pane fade show active" id="nav-basics" role="tabpanel" aria-labelledby="nav-basics-tab">
+        <ul>
+            {% for t in TOPIC_DICT["Basics"] %}
+                <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+            {% endfor %}
+        </ul>
     </div>
-    
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        This is Profile content
+
+    <div class="tab-pane fade" id="nav-web-dev" role="tabpanel" aria-labelledby="nav-web-dev-tab">
+        This is Web Dev content
     </div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        This is Contact content 
+    <div class="tab-pane fade" id="nav-analytics" role="tabpanel" aria-labelledby="nav-analytics-tab">
+        This is Analytics content 
     </div>
 </div>
 
