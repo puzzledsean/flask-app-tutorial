@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for, redirect
 from cms import Content
+from dbconnect import connections
 
 TOPIC_DICT = Content()
 
@@ -39,6 +40,13 @@ def login_page():
         print('Error logging in')
         return render_template("login.html", error=error)
 
+@app.route('/register/', methods=['GET', 'POST'])
+def register_page():
+    try:
+        c, conn = connections()
+        return("okay")
+    except Exception as e:
+        return(str(e))
 
 if __name__ == "__main__":
     app.run(debug=True)
