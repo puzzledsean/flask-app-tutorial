@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<h1> Login </h1> 
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={{request.form.username}}>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value={{request.form.password}}>
+        </div>
+        <button type="submit" class="btn btn-primary" value="Login">Submit</button>
+    </form>
+</div>
+{% endblock %}

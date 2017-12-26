@@ -17,5 +17,9 @@ def dashboard():
 def page_not_found(e):
     return render_template("404.html")
 
+@app.route('/login/', methods=['GET', 'POST'])
+def login_page():
+    return render_template("login.html")
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
